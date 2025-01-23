@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter } from 'lucide-react';
-import teamImage from '../images/1A90ADCA-991B-474F-82D4-636CED5AB167_1_201_a.jpeg';
-import sarahImage from '../images/IMG_6804.jpeg';
+import teamImage from '../images/PXL_20230817_173841991.PORTRAIT.jpeg';
+import sarahImage from '../images/ansarcroped.jpeg';
 import michaelImage from '../images/IMG_7500.jpeg';
 import emilyImage from '../images/PHOTO-2025-01-06-12-48-23.jpg';
 
@@ -63,7 +63,7 @@ export const Team = () => {
         >
           <h2 className="text-4xl font-bold mb-4">Meet Our Team - Tech Hub</h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            The passionate individuals behind HACK_BEYOND
+            The passionate individuals behind HACK_BEYOND_LIMITS
           </p>
         </motion.div>
 

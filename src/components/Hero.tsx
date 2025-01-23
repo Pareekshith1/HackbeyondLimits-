@@ -1,10 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Terminal, Rocket } from 'lucide-react';
-import { useCallback } from 'react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Rocket } from "lucide-react";
+import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import type { Container, Engine } from "tsparticles-engine";
+import type { Engine } from "tsparticles-engine";
 
 export const Hero = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -86,7 +86,7 @@ export const Hero = () => {
           detectRetina: true,
         }}
       />
-      
+
       <div className="relative z-10 h-full">
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4 py-6">
           <motion.div
@@ -95,13 +95,18 @@ export const Hero = () => {
             transition={{ duration: 0.8 }}
             className="space-y-4 md:space-y-8"
           >
+            {/* Custom Logo */}
             <motion.div
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
               className="flex justify-center"
             >
-              <Terminal className="w-12 h-12 md:w-20 md:h-20 text-purple-500" />
+              <img
+                src="./src/images/favicon.png" // Update this with the path to your logo
+                alt="Your Logo"
+                className="w-24 h-24 md:w-32 md:h-32"
+              />
             </motion.div>
 
             <div className="space-y-2 md:space-y-4">
@@ -110,8 +115,9 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 animate-gradient"
+                style={{ fontFamily: "Tomorrow, sans-serif" }}
               >
-                HACK_BEYOND_LIMITS
+                HACK_BEYOND_LIMIT$
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -129,8 +135,9 @@ export const Hero = () => {
               transition={{ delay: 0.6 }}
               className="max-w-2xl mx-auto text-base md:text-lg text-gray-300 px-4"
             >
-              Join the most innovative hackathon where creativity meets technology.
-              24 hours of coding, creation, and breakthrough innovations.
+              Join the most innovative hackathon where creativity meets
+              technology. 24 hours of coding, creation, and breakthrough
+              innovations.
             </motion.p>
 
             <motion.div
@@ -138,7 +145,13 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
-              <button className="group relative px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300">
+              <button
+                className="group relative px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
+                onClick={() =>
+                  (window.location.href =
+                    "https://unstop.com/hackathons/hackbeyondlimits-rathinam-college-of-arts-and-sciences-1353196")
+                }
+              >
                 <span className="flex items-center gap-2 text-sm md:text-base">
                   Register Now
                   <Rocket className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />

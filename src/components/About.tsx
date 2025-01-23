@@ -1,35 +1,39 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Code2, Brain, Rocket, Globe, Heart } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Code2, Brain, Rocket, Heart } from "lucide-react";
 
 const features = [
   {
     icon: Code2,
-    title: 'Web3 Innovation',
-    description: 'Create solutions that address real-world challenges using decentralized technologies, focusing on enhancing blockchain scalability, privacy, security, or interoperability.'
+    title: "Web3 Innovation",
+    description:
+      "Create solutions that address real-world challenges using decentralized technologies, focusing on enhancing blockchain scalability, privacy, security, or interoperability.",
   },
   {
     icon: Brain,
-    title: 'AI Integration',
-    description: 'Develop innovative solutions that leverage artificial intelligence to solve complex real-world problems. Focus on areas like machine learning, data analysis, automation, or AI-driven insights to create impactful and scalable applications.'
+    title: "AI Integration",
+    description:
+      "Develop innovative solutions that leverage artificial intelligence to solve complex real-world problems. Focus on areas like machine learning, data analysis, automation, or AI-driven insights to create impactful and scalable applications.",
   },
   {
     icon: Heart,
-    title: 'Healthcare',
-    description: 'Create solutions that harness technology to improve healthcare outcomes. Focus on areas like patient care, health data management, diagnostics, or telemedicine, aiming to enhance accessibility, efficiency, and quality in the healthcare industry.'
+    title: "Healthcare",
+    description:
+      "Create solutions that harness technology to improve healthcare outcomes. Focus on areas like patient care, health data management, diagnostics, or telemedicine, aiming to enhance accessibility, efficiency, and quality in the healthcare industry.",
   },
   {
     icon: Rocket,
-    title: 'Open Track',
-    description: 'Explore innovative solutions across any domain or industry. This track allows participants to tackle unique challenges of their choice, encouraging creativity and out-of-the-box thinking. Build impactful solutions using technology to address a problem that excites you!'
-  }
+    title: "Open Track",
+    description:
+      "Explore innovative solutions across any domain or industry. This track allows participants to tackle unique challenges of their choice, encouraging creativity and out-of-the-box thinking. Build impactful solutions using technology to address a problem that excites you!",
+  },
 ];
 
 export const About = () => {
   return (
     <section className="py-20 relative overflow-hidden" id="about">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/10 to-black" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,9 +43,14 @@ export const About = () => {
         >
           <h2 className="text-4xl font-bold mb-4">About the Event</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Join us for an immersive 24-hour hackathon where innovation meets technology. 
-            Build groundbreaking solutions, learn from industry experts, and compete for 
-            amazing prizes while networking with fellow developers.
+            Join us for Hack Beyond Limits, an immersive 24-hour hackathon where
+            innovation meets technology! Hosted at Rathinam College, Coimbatore,
+            this exciting event invites you to build groundbreaking solutions,
+            learn from industry experts, and compete for amazing prizes. Network
+            with fellow developers, showcase your skills, and make an impact in
+            domains like Web3, AI, Healthcare, and more. Don’t miss this chance
+            to collaborate, create, and bring your ideas to life in a vibrant
+            and inspiring environment. 🚀
           </p>
         </motion.div>
 
