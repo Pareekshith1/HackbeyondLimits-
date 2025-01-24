@@ -9,6 +9,7 @@ import OrganizerPage from "./components/OrganizerPage";
 import { Location } from "./components/Location";
 import { Footer } from "./components/Footer";
 import { Sponsors } from "./components/Sponsors";
+import ReasonsSection from "./components/reasons"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <About />
       <Timeline />
       <Prizes />
+      <ReasonsSection />
       <Sponsors />
       <Location />
       <OrganizerPage />

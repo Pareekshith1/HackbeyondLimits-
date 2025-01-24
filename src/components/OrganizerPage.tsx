@@ -4,88 +4,173 @@ type Organizer = {
   name: string;
   title: string;
   photo: string;
+  socialLinks: {
+    twitter: string;
+    instagram: string;
+    linkedin: string;
+  };
 };
 
 const organizers: Organizer[] = [
   {
-    name: "Lakshan-G",
+    name: "Lakshan G",
     title: "HBL | Lead Organizer | Head of TechHub",
     photo: "./src/images/org/lakshan.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Arun Kumar K",
     title: "HBL | Event Manager | TechHub Event Organizer ",
     photo: "./src/images/org/arun.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Aasil Ahammed S",
     title: "HBL | Event Coordinator| TechHub Event Coordinator ",
     photo: "./src/images/org/aasil.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Ansar Hussain",
-    title: "HBL | Management Lead | Head of TechHub",
+    title: "HBL | Management Lead | Head Of TechHub",
     photo: "./src/images/org/ansar.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Praveen R",
     title: "HBL | Management Control | TechHub Event management",
     photo: "./src/images/org/praveen.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Mohammed Irfan",
     title: "HBL | Management Control | TechHub Event Management",
     photo: "./src/images/org/irfan.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Mohanraj R",
     title: "HBL | Management Control | TechHub Event Associate",
     photo: "./src/images/org/mohan.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Pareekshith P",
     title: "HBL | Technical Lead | TechHub Technical Lead",
     photo: "./src/images/org/pareekshith.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Pozhilan A",
     title: "HBL | Technical Director | TechHub Technical Assistant",
     photo: "./src/images/org/pozhilan.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Mohammed Nazeem M",
     title: "HBL | Technical Director | TechHub Technical Organizer",
     photo: "./src/images/org/naseem.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Mayur Karthik",
-    title: "HBl | Technical Director | TechHub technical Organizer",
+    title: "HBL | Technical Director | TechHub Technical Organizer",
     photo: "./src/images/org/mayur.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Nashva A",
     title: "HBL | Support Team Lead | TechHub media Lead",
     photo: "./src/images/org/naswa.jpEg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Varsha K",
-    title: "HBL | Support team | TechHub Media Manager",
+    title: "HBL | Support Team | TechHub Media Manager",
     photo: "./src/images/org/varsha.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Safna M",
-    title: "HBL| Support team | TechHub Media Manager",
+    title: "HBL| Support Team | TechHub Media Manager",
     photo: "./src/images/org/safna.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Rithish B",
     title: "HBL | Design Director | TechHub Visual Designer",
     photo: "./src/images/org/rithesh.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
   {
     name: "Joshwa Sanjay",
     title: "HBL | Event Designer | Techhub Visual Designer",
     photo: "./src/images/favicon.png",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
   },
 ];
 
@@ -129,6 +214,19 @@ const OrganizerPage: React.FC = () => {
                       style={styles.hoverImageLeft}
                     />
                   )}
+
+                  {/* Social Links */}
+                  <div style={styles.socialLinks}>
+                    <a href={organizer.socialLinks.twitter} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
+                      <img src="./src/images/icons/x.png" alt="Twitter" style={styles.icon} />
+                    </a>
+                    <a href={organizer.socialLinks.instagram} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
+                      <img src="./src/images/icons/insta.png" alt="Instagram" style={styles.icon} />
+                    </a>
+                    <a href={organizer.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
+                      <img src="./src/images/icons/link.png" alt="LinkedIn" style={styles.icon} />
+                    </a>
+                  </div>
                 </div>
               ))}
           </div>
@@ -159,6 +257,19 @@ const OrganizerPage: React.FC = () => {
                       style={styles.hoverImageRight}
                     />
                   )}
+
+                  {/* Social Links */}
+                  <div style={styles.socialLinks}>
+                    <a href={organizer.socialLinks.twitter} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
+                      <img src="./src/images/icons/x.png" alt="Twitter" style={styles.icon} />
+                    </a>
+                    <a href={organizer.socialLinks.instagram} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
+                      <img src="./src/images/icons/insta.png" alt="Instagram" style={styles.icon} />
+                    </a>
+                    <a href={organizer.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
+                      <img src="./src/images/icons/link.png" alt="LinkedIn" style={styles.icon} />
+                    </a>
+                  </div>
                 </div>
               ))}
           </div>
@@ -264,6 +375,20 @@ const styles = {
     transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
     opacity: 1,
     transform: "scale(1)",
+  },
+  socialLinks: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "1rem",
+    marginTop: "1rem",
+  },
+  socialIcon: {
+    display: "inline-block",
+  },
+  icon: {
+    width: "24px",
+    height: "24px",
+    objectFit: "contain",
   },
 };
 

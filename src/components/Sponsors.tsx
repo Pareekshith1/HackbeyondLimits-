@@ -61,7 +61,7 @@ export const Sponsors = () => {
                   margin: "0 auto",
                   maxWidth: "600px",
                   lineHeight: "1.8",
-                  marginBottom: "10px", // 10px space added
+                  marginBottom: "20px", // 20px space added
                 }}
               >
                 {description}
@@ -79,6 +79,7 @@ export const Sponsors = () => {
                       padding: "20px",
                       paddingBottom: "40px", // Adjusted for additional spacing at the bottom
                       gap: "20px", // Added space between elements in the container
+                      marginTop: "20px", // Added 20px spacing from the top
                     }}
                   >
                     {/* Sponsor Name and Placeholder */}
@@ -98,6 +99,7 @@ export const Sponsors = () => {
                         style={{
                           textAlign: "justify",
                           lineHeight: "1.6",
+                          marginTop: "20px", // 20px spacing before description
                         }}
                       >
                         {sponsor.description}
@@ -124,4 +126,3 @@ export const Sponsors = () => {
     </section>
   );
 };
-b

@@ -1,90 +1,106 @@
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Github, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="relative py-12 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 via-black to-black" />
+    <footer className="relative bg-gradient-to-t from-black via-gray-900 to-gray-800 text-gray-300 py-16">
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-black to-black opacity-90" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      {/* Footer Content */}
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Branding */}
           <div>
-            <h3 className="text-xl font-bold mb-4">HACK_BEYOND_LIMIT$</h3>
-            <p className="text-gray-400">GO Beyond . Hack Beyond</p>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <a
-                  href="#about"
-                  className="hover:text-purple-400 transition-colors"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#timeline"
-                  className="hover:text-purple-400 transition-colors"
-                >
-                  Timeline
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#teams"
-                  className="hover:text-purple-400 transition-colors"
-                >
-                  Teams
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>Email: hackbeyondlimits@gmail.com</li>
-              <li>Location: Rathinam College Of Arts And Science</li>
-              <li>Phone No: +91 0000000000</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
-            <div className="flex space-x-4">
+            <h3 className="text-2xl font-extrabold text-white mb-4 tracking-wide">
+              HACK_BEYOND_LIMIT$
+            </h3>
+            <p className="text-gray-400 text-sm mb-4">
+              Go Beyond. Hack Beyond.
+            </p>
+            <div className="flex space-x-4 mt-6">
               <a
                 href="#"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-purple-400 transition-transform duration-300 hover:scale-110"
               >
-                <Twitter className="w-6 h-6" />
+                <Twitter className="w-8 h-8" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-purple-400 transition-transform duration-300 hover:scale-110"
               >
-                <Github className="w-6 h-6" />
+                <Github className="w-8 h-8" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-purple-400 transition-transform duration-300 hover:scale-110"
               >
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-8 h-8" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-400 hover:text-purple-400 transition-transform duration-300 hover:scale-110"
               >
-                <Mail className="w-6 h-6" />
+                <Mail className="w-8 h-8" />
               </a>
             </div>
           </div>
-        </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 HACK_BEYOND. All rights reserved.</p>
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold text-purple-400 mb-4">
+              Contact Us
+            </h4>
+            <ul className="space-y-4 text-gray-400">
+              <li className="flex items-center space-x-4">
+                <MapPin className="w-6 h-6 text-purple-400" />
+                <span>Rathinam College Of Arts And Science</span>
+              </li>
+              <li className="flex items-center space-x-4">
+                <Mail className="w-6 h-6 text-purple-400" />
+                <span>hackbeyondlimits@gmail.com</span>
+              </li>
+              <li className="flex items-center space-x-4">
+                <Phone className="w-6 h-6 text-purple-400" />
+                <span>+91 0000000000</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Email and Query Form */}
+          <div>
+            <h4 className="text-lg font-semibold text-purple-400 mb-4">
+              Drop Us a Query
+            </h4>
+            <form className="space-y-4">
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full p-3 bg-gray-800 text-gray-300 rounded-md border border-gray-700 focus:ring-2 focus:ring-purple-500 outline-none"
+              />
+              <textarea
+                rows={4}
+                placeholder="Your Query"
+                className="w-full p-3 bg-gray-800 text-gray-300 rounded-md border border-gray-700 focus:ring-2 focus:ring-purple-500 outline-none"
+              ></textarea>
+              <button
+                type="submit"
+                className="w-full bg-purple-500 text-white font-semibold py-2 rounded-md hover:bg-purple-600 transition-colors"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
+
+      {/* Divider */}
+      <div className="my-8">
+        <div className="h-0.5 bg-gradient-to-r from-purple-500 via-transparent to-purple-500"></div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="text-center text-gray-400 py-4">
+        <p>&copy; {new Date().getFullYear()} HACK_BEYOND_LIMIT$. All rights reserved.</p>
       </div>
     </footer>
   );
