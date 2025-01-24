@@ -14,90 +14,94 @@ const organizers: Organizer[] = [
   },
   {
     name: "Arun Kumar K",
-    title: "HBL | Event Manager | ",
+    title: "HBL | Event Manager | TechHub Event Organizer ",
     photo: "./src/images/org/arun.jpeg",
   },
   {
     name: "Aasil Ahammed S",
-    title: "Event Coordinator",
+    title: "HBL | Event Coordinator| TechHub Event Coordinator ",
     photo: "./src/images/org/aasil.jpeg",
   },
   {
     name: "Ansar Hussain",
-    title: "Management Lead",
-    photo: "/path-to-photos/akersh.jpg",
+    title: "HBL | Management Lead | Head of TechHub",
+    photo: "./src/images/org/ansar.jpeg",
   },
   {
     name: "Praveen R",
-    title: "Management Control",
+    title: "HBL | Management Control | TechHub Event management",
     photo: "./src/images/org/praveen.jpeg",
   },
   {
     name: "Mohammed Irfan",
-    title: "Management Control",
+    title: "HBL | Management Control | TechHub Event Management",
     photo: "./src/images/org/irfan.jpeg",
   },
   {
     name: "Mohanraj R",
-    title: "Management Control",
+    title: "HBL | Management Control | TechHub Event Associate",
     photo: "./src/images/org/mohan.jpeg",
   },
   {
     name: "Pareekshith P",
-    title: "Technical Lead",
+    title: "HBL | Technical Lead | TechHub Technical Lead",
     photo: "./src/images/org/pareekshith.jpeg",
   },
   {
     name: "Pozhilan A",
-    title: "Technical Director",
-    photo: "./src/images/org/pozhilan.jpg",
+    title: "HBL | Technical Director | TechHub Technical Assistant",
+    photo: "./src/images/org/pozhilan.jpeg",
   },
   {
     name: "Mohammed Nazeem M",
-    title: "Technical Director",
+    title: "HBL | Technical Director | TechHub Technical Organizer",
     photo: "./src/images/org/naseem.jpeg",
   },
   {
     name: "Mayur Karthik",
-    title: "Technical Director",
+    title: "HBl | Technical Director | TechHub technical Organizer",
     photo: "./src/images/org/mayur.jpeg",
   },
   {
     name: "Nashva A",
-    title: "Support Team Lead",
-    photo: "./src/images/org/nashva.jpg",
+    title: "HBL | Support Team Lead | TechHub media Lead",
+    photo: "./src/images/org/naswa.jpEg",
   },
   {
     name: "Varsha K",
-    title: "Support team",
+    title: "HBL | Support team | TechHub Media Manager",
     photo: "./src/images/org/varsha.jpeg",
   },
   {
     name: "Safna M",
-    title: "Support team",
+    title: "HBL| Support team | TechHub Media Manager",
     photo: "./src/images/org/safna.jpeg",
   },
   {
     name: "Rithish B",
-    title: "Design Director",
-    photo: "./src/images/org/rithis.jpg",
+    title: "HBL | Design Director | TechHub Visual Designer",
+    photo: "./src/images/org/rithesh.jpeg",
   },
   {
     name: "Joshwa Sanjay",
-    title: "Event Designer",
+    title: "HBL | Event Designer | Techhub Visual Designer",
     photo: "./src/images/favicon.png",
   },
 ];
 
 const OrganizerPage: React.FC = () => {
-  const [hoveredOrganizer, setHoveredOrganizer] = useState<Organizer | null>(
-    null
-  );
+  const [hoveredOrganizer, setHoveredOrganizer] = useState<Organizer | null>(null);
 
   return (
     <div style={styles.background}>
       <div style={styles.container}>
-        <h1 style={styles.heading}>Mentors & Organizers</h1>
+        <h1 style={styles.heading}>Our Powerhouse Team</h1>
+
+        {/* Motivational Paragraph about Organizers */}
+        <p style={styles.motivationalParagraph}>
+          Meet the event organizers who are the backbone of this hackathon, tirelessly working behind the scenes to create a platform that fosters innovation, collaboration, and growth. Their commitment and hard work make this event possible.
+        </p>
+
         <div style={styles.gridWrapper}>
           <div style={styles.gridColumn}>
             {organizers
@@ -188,6 +192,14 @@ const styles = {
     marginBottom: "1.5rem",
     fontWeight: "bold" as const,
     color: "#fff",
+  },
+  motivationalParagraph: {
+    fontSize: "1.1rem",
+    color: "#A020F0",
+    marginBottom: "2rem",
+    textAlign: "justify" as const,
+    lineHeight: "1.6",
+    padding: "0 1rem",
   },
   gridWrapper: {
     display: "flex",
