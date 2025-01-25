@@ -214,19 +214,6 @@ const OrganizerPage: React.FC = () => {
                       style={styles.hoverImageLeft}
                     />
                   )}
-
-                  {/* Social Links */}
-                  <div style={styles.socialLinks}>
-                    <a href={organizer.socialLinks.twitter} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
-                      <img src="./src/images/icons/x.png" alt="Twitter" style={styles.icon} />
-                    </a>
-                    <a href={organizer.socialLinks.instagram} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
-                      <img src="./src/images/icons/insta.png" alt="Instagram" style={styles.icon} />
-                    </a>
-                    <a href={organizer.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
-                      <img src="./src/images/icons/link.png" alt="LinkedIn" style={styles.icon} />
-                    </a>
-                  </div>
                 </div>
               ))}
           </div>
@@ -257,19 +244,6 @@ const OrganizerPage: React.FC = () => {
                       style={styles.hoverImageRight}
                     />
                   )}
-
-                  {/* Social Links */}
-                  <div style={styles.socialLinks}>
-                    <a href={organizer.socialLinks.twitter} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
-                      <img src="./src/images/icons/x.png" alt="Twitter" style={styles.icon} />
-                    </a>
-                    <a href={organizer.socialLinks.instagram} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
-                      <img src="./src/images/icons/insta.png" alt="Instagram" style={styles.icon} />
-                    </a>
-                    <a href={organizer.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
-                      <img src="./src/images/icons/link.png" alt="LinkedIn" style={styles.icon} />
-                    </a>
-                  </div>
                 </div>
               ))}
           </div>
@@ -357,9 +331,7 @@ const styles = {
     objectFit: "cover" as const,
     border: "2px solid #fff",
     boxShadow: "0 4px 16px rgba(0, 0, 0, 0.3)",
-    transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
-    opacity: 1,
-    transform: "scale(1)",
+    transition: "opacity 0.5s ease-in-out",
   },
   hoverImageRight: {
     position: "absolute" as const,
@@ -372,23 +344,7 @@ const styles = {
     objectFit: "cover" as const,
     border: "2px solid #fff",
     boxShadow: "0 4px 16px rgba(0, 0, 0, 0.3)",
-    transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
-    opacity: 1,
-    transform: "scale(1)",
-  },
-  socialLinks: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "1rem",
-    marginTop: "1rem",
-  },
-  socialIcon: {
-    display: "inline-block",
-  },
-  icon: {
-    width: "24px",
-    height: "24px",
-    objectFit: "contain",
+    transition: "opacity 0.5s ease-in-out",
   },
 };
 

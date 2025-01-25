@@ -5,27 +5,27 @@ import { useInView } from 'react-intersection-observer';
 const timelineEvents = [
   {
     date: 'Jan 10, 2025',
-    title: 'Registration Opens',
+    title: 'Enrollment Begins',
     description: 'Start your journey by registering your team'
   },
   {
     date: 'Feb 12, 2025',
-    title: 'Registration Closes',
+    title: 'Final Call for Registration',
     description: 'Last day to secure your spot'
   },
   {
     date: 'Feb 22, 2025',
-    title: 'Opening Ceremony',
+    title: 'Event Kickoff',
     description: 'Kickoff and team briefing'
   },
   {
     date: 'Feb 22, 2025',
-    title: 'Hackathon Begins',
+    title: 'Coding Marathon Starts',
     description: '24 hours of intense coding and creation'
   },
   {
     date: 'Feb 23, 2025',
-    title: 'End of Hackathon',
+    title: 'Packup Of HackBeyondLimit$',
     description: 'Ending of 24hrs of coding and hacking '
   }
 ];
