@@ -7,19 +7,19 @@ const prizes = [
     icon: Trophy,
     place: "1st Place",
     prize: "₹20,000",
-    perks: ["Startup Mentorship", "Cloud Credits", "Hardware Kit"],
+    perks: ["Startup Mentorship", "Gift Vouchers", "Certificate"],
   },
   {
     icon: Award,
     place: "2nd Place",
     prize: "₹15,000",
-    perks: ["Cloud Credits", "Development Tools", "Tech Gadgets"],
+    perks: ["Idea Development Support", "AI Credits", "Certificate"],
   },
   {
     icon: Gift,
     place: "3rd Place",
     prize: "₹5,000",
-    perks: ["Development Tools", "Online Courses", "Swag Pack"],
+    perks: ["AI Credits", "Swag Pack", "Certificate"],
   },
 ];
 

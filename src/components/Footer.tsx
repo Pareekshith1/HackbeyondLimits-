@@ -61,7 +61,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center space-x-4">
                 <Phone className="w-6 h-6 text-purple-400" />
-                <span>+91 </span>
+                <span>+91 63740 60864</span>
               </li>
             </ul>
           </div>
@@ -100,7 +100,10 @@ export const Footer = () => {
 
       {/* Bottom Section */}
       <div className="text-center text-gray-400 py-4">
-        <p>&copy; {new Date().getFullYear()} HACK_BEYOND_LIMIT$. All rights reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} HACK_BEYOND_LIMIT$. All rights
+          reserved.
+        </p>
       </div>
     </footer>
   );

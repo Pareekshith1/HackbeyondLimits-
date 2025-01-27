@@ -42,7 +42,7 @@ export const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4">About the Event</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto text-justify">
             Join us for Hack Beyond Limits, an immersive 24-hour hackathon where
             innovation meets technology! Hosted at Rathinam College, Coimbatore,
             this exciting event invites you to build groundbreaking solutions,

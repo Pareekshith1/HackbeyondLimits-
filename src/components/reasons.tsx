@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Section = styled.section`
   background: transparent;
-  color: #e6d5b8; /* Golden text color */
+  color: white;
   padding: 4rem 2rem;
   text-align: center;
 `;
@@ -22,7 +22,7 @@ const Subtitle = styled.span`
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
-  color: #f2e3c6;
+  color: white;
   display: block;
   margin-bottom: 0.5rem;
 `;
@@ -41,7 +41,7 @@ const ReasonItem = styled.div<{ isRaised: boolean }>`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 180px; /* Set a consistent width */
+  width: 180px;
   position: relative;
   margin-top: ${({ isRaised }) => (isRaised ? "40px" : "80px")};
 `;
@@ -49,13 +49,13 @@ const ReasonItem = styled.div<{ isRaised: boolean }>`
 const IconWrapper = styled.div`
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #ffd700; /* Gold icon color */
+  color: white;
 `;
 
 const TextWrapper = styled.p`
   font-size: 1rem;
   line-height: 1.5;
-  color: #e6d5b8;
+  color: white;
 `;
 
 const reasonsData = [
@@ -76,7 +76,7 @@ const reasonsData = [
   },
   {
     icon: "💡",
-    text: "Opportunities for idea development and funding for the most innovative ideas by companies.",
+    text: "Opportunities for idea development and funding of 25Lakhs for the most innovative ideas by companies.",
     isRaised: true,
   },
   {

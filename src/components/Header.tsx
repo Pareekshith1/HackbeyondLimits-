@@ -27,11 +27,16 @@ export const Header = () => {
           <div className="flex items-center gap-3">
             {/* Custom Logo */}
             <img
-              src="./src/images/thlogo1.png" // Update this with the correct path to your logo
-              alt="Your Logo"
-              className="w-[22px] h-[35px] md:w-[26px] md:h-[42px]" // Further reduced size proportionally
+              src="./src/images/favicon.png" // Make sure this path is correct
+              alt="HBL logo"
+              className="w-[40px] h-[40px] rounded-full object-cover"
             />
-            <span className="font-bold text-xl">Tech Hub</span>
+            <span
+              className="text-xl md:text-2xl font-bold text-white"
+              style={{ fontFamily: "Tomorrow, sans-serif" }}
+            >
+              Hack Beyond Limit$
+            </span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">

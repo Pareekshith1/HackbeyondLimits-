@@ -153,6 +153,26 @@ const organizers: Organizer[] = [
     },
   },
   {
+    name: "Vasnika S",
+    title: "HBL| Support Team | TechHub Media Manager",
+    photo: "./src/images/org/Vasnika.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
+  },
+  {
+    name: "ManiPrashath K S",
+    title: "HBL| Support Team | TechHub Media Manager",
+    photo: "./src/images/org/mani.jpeg",
+    socialLinks: {
+      twitter: "#",
+      instagram: "#",
+      linkedin: "#",
+    },
+  },
+  {
     name: "Rithish B",
     title: "HBL | Design Director | TechHub Visual Designer",
     photo: "./src/images/org/rithesh.jpeg",
@@ -165,7 +185,7 @@ const organizers: Organizer[] = [
   {
     name: "Joshwa Sanjay",
     title: "HBL | Event Designer | Techhub Visual Designer",
-    photo: "./src/images/favicon.png",
+    photo: "./src/images/org/joshva.png",
     socialLinks: {
       twitter: "#",
       instagram: "#",
@@ -175,7 +195,9 @@ const organizers: Organizer[] = [
 ];
 
 const OrganizerPage: React.FC = () => {
-  const [hoveredOrganizer, setHoveredOrganizer] = useState<Organizer | null>(null);
+  const [hoveredOrganizer, setHoveredOrganizer] = useState<Organizer | null>(
+    null
+  );
 
   return (
     <div style={styles.background}>
@@ -184,7 +206,10 @@ const OrganizerPage: React.FC = () => {
 
         {/* Motivational Paragraph about Organizers */}
         <p style={styles.motivationalParagraph}>
-          Meet the event organizers who are the backbone of this hackathon, tirelessly working behind the scenes to create a platform that fosters innovation, collaboration, and growth. Their commitment and hard work make this event possible.
+          Meet the event organizers who are the backbone of this hackathon,
+          tirelessly working behind the scenes to create a platform that fosters
+          innovation, collaboration, and growth. Their commitment and hard work
+          make this event possible.
         </p>
 
         <div style={styles.gridWrapper}>

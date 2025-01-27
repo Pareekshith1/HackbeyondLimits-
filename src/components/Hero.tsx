@@ -95,20 +95,6 @@ export const Hero = () => {
             transition={{ duration: 0.8 }}
             className="space-y-4 md:space-y-8"
           >
-            {/* Custom Logo */}
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="flex justify-center"
-            >
-              <img
-                src="./src/images/favicon.png" // Update this with the path to your logo
-                alt="Your Logo"
-                className="w-24 h-24 md:w-32 md:h-32"
-              />
-            </motion.div>
-
             <div className="space-y-2 md:space-y-4">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -133,11 +119,14 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="max-w-2xl mx-auto text-base md:text-lg text-gray-300 px-4"
+              className="max-w-2xl mx-auto text-base md:text-lg text-gray-300 px-4 text-justify"
             >
               Join the most innovative hackathon where creativity meets
               technology. 24 hours of coding, creation, and breakthrough
-              innovations.
+              innovations, all fueled by passion and collaboration.{" "}
+              <strong>Organized by TechHub</strong>, we bring you the ultimate
+              challenge to push your limits and unlock new possibilities. Get
+              ready to create, compete, and make your mark!
             </motion.p>
 
             <motion.div
