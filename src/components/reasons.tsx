@@ -6,6 +6,14 @@ const Section = styled.section`
   color: white;
   padding: 4rem 2rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh; /* Make the section take full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  margin-left: 2rem; /* Added heavy margin on the left */
+  margin-right: 2rem; /* Added heavy margin on the right */
 `;
 
 const TitleWrapper = styled.div`
@@ -29,11 +37,10 @@ const Subtitle = styled.span`
 
 const ReasonsWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 3rem;
   flex-wrap: wrap;
-  position: relative;
+  justify-content: center;
+  gap: 5rem; /* Increased gap between the reasons */
+  margin-top: 40px; /* Increased space between heading and reasons */
 `;
 
 const ReasonItem = styled.div<{ isRaised: boolean }>`
@@ -42,8 +49,13 @@ const ReasonItem = styled.div<{ isRaised: boolean }>`
   align-items: center;
   text-align: center;
   width: 180px;
+  min-height: 220px; /* Prevent shifting */
   position: relative;
-  margin-top: ${({ isRaised }) => (isRaised ? "40px" : "80px")};
+  transition: transform 0.3s ease;
+
+  /* Fix Margin Issue */
+  transform: ${({ isRaised }) =>
+    isRaised ? "translateY(-10px)" : "translateY(10px)"};
 `;
 
 const IconWrapper = styled.div`
@@ -95,7 +107,7 @@ const ReasonsSection: React.FC = () => {
       </TitleWrapper>
       <ReasonsWrapper>
         {reasonsData.map((reason, index) => (
-          <ReasonItem key={index} isRaised={index % 2 !== 0}>
+          <ReasonItem key={index} isRaised={reason.isRaised}>
             <IconWrapper>{reason.icon}</IconWrapper>
             <TextWrapper>{reason.text}</TextWrapper>
           </ReasonItem>

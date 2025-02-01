@@ -1,155 +1,130 @@
-import React from "react";
+import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
-import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import type { Engine } from "tsparticles-engine";
+import { Engine } from "tsparticles-engine";
+import Spline from "@splinetool/react-spline";
 
 export const Hero = () => {
+  const [launch, setLaunch] = useState(false);
+
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
 
+  const handleRegister = () => {
+    setLaunch(true);
+    setTimeout(() => {
+      window.location.href =
+        "https://unstop.com/hackathons/hackbeyondlimits-rathinam-college-of-arts-and-sciences-1353196";
+    }, 2500);
+  };
+
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full flex flex-col items-center justify-center px-6 overflow-hidden">
       {/* Particles Background */}
       <Particles
         id="tsparticles"
         init={particlesInit}
         options={{
-          background: {
-            color: {
-              value: "transparent",
-            },
-          },
+          background: { color: { value: "transparent" } },
           fpsLimit: 120,
-          interactivity: {
-            events: {
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-            },
-            modes: {
-              push: {
-                quantity: 4,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
-            },
-          },
           particles: {
-            color: {
-              value: ["#9333EA", "#3B82F6"],
-            },
-            links: {
-              color: "#ffffff",
-              distance: 150,
-              enable: true,
-              opacity: 0.2,
-              width: 1,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outModes: {
-                default: "bounce",
-              },
-              random: false,
-              speed: 2,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                area: 800,
-              },
-              value: 80,
-            },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              value: { min: 1, max: 5 },
-            },
+            number: { value: 100, density: { enable: true, area: 800 } },
+            color: { value: ["#9333EA", "#3B82F6", "#ff007f"] },
+            shape: { type: "circle" },
+            opacity: { value: 0.7 },
+            size: { value: { min: 1, max: 5 } },
+            move: { enable: true, speed: 1, direction: "none" },
           },
           detectRetina: true,
         }}
       />
 
-      <div className="relative z-10 h-full">
-        <div className="relative h-full flex flex-col items-center justify-center text-center px-4 py-6">
+      {/* Rocket Launch Animation */}
+      {launch && (
+        <div className="absolute inset-0 bg-black flex items-center justify-center z-50">
+          <div className="text-white text-lg font-bold">Redirecting...</div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-4 md:space-y-8"
+            initial={{ y: 0, opacity: 1 }}
+            animate={{ y: -500, opacity: 0 }}
+            transition={{ duration: 2 }}
+            className="absolute bottom-10"
           >
-            <div className="space-y-2 md:space-y-4">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 animate-gradient"
-                style={{ fontFamily: "Tomorrow, sans-serif" }}
-              >
-                HACK_BEYOND_LIMIT$
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400"
-              >
-                Go beyond Hack beyond!
-              </motion.p>
-            </div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="max-w-2xl mx-auto text-base md:text-lg text-gray-300 px-4 text-justify"
-            >
-              Join the most innovative hackathon where creativity meets
-              technology. 24 hours of coding, creation, and breakthrough
-              innovations, all fueled by passion and collaboration.{" "}
-              <strong>Organized by TechHub</strong>, we bring you the ultimate
-              challenge to push your limits and unlock new possibilities. Get
-              ready to create, compete, and make your mark!
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-            >
-              <button
-                className="group relative px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
-                onClick={() =>
-                  (window.location.href =
-                    "https://unstop.com/hackathons/hackbeyondlimits-rathinam-college-of-arts-and-sciences-1353196")
-                }
-              >
-                <span className="flex items-center gap-2 text-sm md:text-base">
-                  Register Now
-                  <Rocket className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button>
-            </motion.div>
+            <Rocket size={80} className="text-white" />
           </motion.div>
         </div>
+      )}
+
+      {/* Hero Content */}
+      <div className="relative z-20 w-full flex flex-col md:flex-row items-center justify-center gap-12 text-center md:text-left px-4 md:px-16">
+        {/* Text Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="md:w-1/2 flex flex-col items-center text-center md:text-left"
+        >
+          <h1
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500"
+            style={{
+              fontFamily: "Tomorrow, sans-serif",
+              position: "relative",
+              left: 50,
+            }}
+          >
+            HACK_BEYOND_LIMIT$
+          </h1>
+          <p
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400 mt-4"
+            style={{
+              position: "relative",
+              left: 50,
+            }}
+          >
+            Go beyond. Hack beyond!
+          </p>
+
+          {/* Call to Action Button */}
+          <motion.button
+            className="relative px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-bold text-white mt-6 shadow-lg hover:shadow-purple-500/50 hover:scale-105 transition-transform duration-300"
+            onClick={handleRegister}
+            animate={{ scale: 1.05 }}
+            style={{
+              position: "relative",
+              left: 50,
+            }}
+          >
+            <span className="flex items-center gap-2 text-sm md:text-base">
+              Register Now
+              <motion.div
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 0.8, repeat: Infinity }}
+              >
+                <Rocket className="w-4 h-4 md:w-5 md:h-5" />
+              </motion.div>
+            </span>
+            <div className="absolute inset-0 bg-white/10 rounded-lg opacity-0 hover:opacity-100 transition-opacity" />
+          </motion.button>
+        </motion.div>
+
+        {/* Interactive Spline Mascot */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="md:w-[400px] md:h-[500px] flex justify-right items-right mt-8 md:ml-16"
+          style={{
+            backgroundColor: "transparent",
+            position: "relative",
+            left: 50,
+          }}
+        >
+          <div className="w-full h-full">
+            <Spline scene="./src/images/robot_follow_cursor_for_landing_page_copy_2.spline" />
+          </div>
+        </motion.div>
       </div>
     </div>
   );

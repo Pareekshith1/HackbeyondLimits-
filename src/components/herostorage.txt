@@ -1,0 +1,132 @@
+import React, { useState, useEffect, useCallback } from "react";
+import { motion } from "framer-motion";
+import { Rocket } from "lucide-react";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import Typewriter from "typewriter-effect";
+import { Engine } from "tsparticles-engine";
+
+export const Hero = () => {
+  const [launch, setLaunch] = useState(false);
+  const [contentLoaded, setContentLoaded] = useState(false);
+
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadSlim(engine);
+  }, []);
+
+  // Trigger content load after the heading animation finishes
+  useEffect(() => {
+    setTimeout(() => {
+      setContentLoaded(true);
+    }, 3500); // After typing in, wait a bit to show other content
+  }, []);
+
+  const handleRegister = () => {
+    setLaunch(true);
+    setTimeout(() => {
+      window.location.href =
+        "https://unstop.com/hackathons/hackbeyondlimits-rathinam-college-of-arts-and-sciences-1353196";
+    }, 2500); // Delay before redirection
+  };
+
+  return (
+    <div className="relative h-screen w-full overflow-hidden">
+      {/* Particles Background */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          background: { color: { value: "transparent" } },
+          fpsLimit: 120,
+          particles: {
+            number: { value: 100, density: { enable: true, area: 800 } },
+            color: { value: ["#9333EA", "#3B82F6", "#ff007f"] },
+            shape: { type: "circle" },
+            opacity: { value: 0.7 },
+            size: { value: { min: 1, max: 5 } },
+            move: { enable: true, speed: 1, direction: "none" },
+            glow: { enable: true, color: "#ffffff" },
+          },
+          detectRetina: true,
+        }}
+      />
+
+      {/* Rocket Launch Animation */}
+      {launch && (
+        <div className="absolute inset-0 bg-black flex items-center justify-center z-50">
+          <div className="text-white text-lg font-bold">Redirecting...</div>
+          <motion.div
+            initial={{ y: 0, opacity: 1 }}
+            animate={{ y: -500, opacity: 0 }}
+            transition={{ duration: 2 }}
+            className="absolute bottom-10"
+          >
+            <Rocket size={80} className="text-white" />
+          </motion.div>
+        </div>
+      )}
+
+      {/* Hero Content */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 py-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          {/* Typing Animation for Heading */}
+          <h1
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 animate-gradient"
+            style={{ fontFamily: "Tomorrow, sans-serif" }}
+          >
+            <Typewriter
+              options={{
+                strings: ["HACK_BEYOND_LIMIT$"],
+                autoStart: true,
+                loop: false, // Do not loop
+                delay: 100,
+                cursor: "_",
+                pauseFor: 99999999, // Infinite pause to keep content displayed
+              }}
+            />
+          </h1>
+        </motion.div>
+
+        {contentLoaded && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+          >
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400 mt-4">
+              Go beyond. Hack beyond!
+            </p>
+            <p className="max-w-3xl mx-auto text-base md:text-lg text-gray-300 px-4 text-justify mt-4">
+              Join the most innovative hackathon where creativity meets
+              technology. 24 hours of coding, creation, and breakthrough
+              innovations, all fueled by passion and collaboration.{" "}
+              <strong>Organized by TechHub</strong>, we bring you the ultimate
+              challenge to push your limits and unlock new possibilities. Get
+              ready to create, compete, and make your mark!
+            </p>
+            {/* Cool Button Animation */}
+            <motion.button
+              className="relative px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-bold text-white mt-6 shadow-lg hover:shadow-purple-500/50 hover:scale-105 transition-transform duration-300"
+              onClick={handleRegister}
+            >
+              <span className="flex items-center gap-2 text-sm md:text-base">
+                Register Now
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 0.8, repeat: Infinity }}
+                >
+                  <Rocket className="w-4 h-4 md:w-5 md:h-5" />
+                </motion.div>
+              </span>
+              <div className="absolute inset-0 bg-white/10 rounded-lg opacity-0 hover:opacity-100 transition-opacity" />
+            </motion.button>
+          </motion.div>
+        )}
+      </div>
+    </div>
+  );
+};

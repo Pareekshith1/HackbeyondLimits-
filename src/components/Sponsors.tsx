@@ -1,4 +1,14 @@
-import React from "react";
+import { Helmet } from "react-helmet-async";
+import cccLogo from "../images/ccc.png";
+import cdxLogo from "../images/cdx.png";
+import ustLogo from "../images/ust.png";
+import xyzLogo from "../images/xyzlogo.png";
+import navanLogo from "../images/navan.png";
+import nvLogo from "../images/nv.png";
+import sailyLogo from "../images/saily.png";
+import nordLogo from "../images/nord.png";
+import hvrrLogo from "../images/hvrr.png";
+import techhub from "../images/techhub.png";
 
 export const Sponsors = () => {
   const sponsorCategories = [
@@ -7,8 +17,8 @@ export const Sponsors = () => {
       description:
         "Here are our Community Partners who foster innovation and collaboration. Their dedication bridges the gap between technology and community.",
       sponsors: [
-        { name: "Coming Soon", logo: "", description: "" },
-        { name: "Coming Soon", logo: "", description: "" },
+        { name: "TechHub", logo: techhub, description: "", link: "#" },
+        { name: "Coming Soon", logo: "", description: "", link: "#" },
       ],
     },
     {
@@ -18,14 +28,14 @@ export const Sponsors = () => {
       sponsors: [
         {
           name: "Coin Checkup",
-          logo: "./src/images/sponsor/ccc.png",
+          logo: cccLogo,
           description:
             "Thanks to CoinCheckup, our Promotional Partner, for helping us expand our reach with real-time crypto insights!",
           link: "https://www.coincheckup.com",
         },
         {
           name: "Coin Codex",
-          logo: "./src/images/sponsor/cdx.png",
+          logo: cdxLogo,
           description:
             "Grateful to CoinCodex, our Promotional Partner, for supporting our mission and connecting us with the crypto community!",
           link: "https://www.coincodex.com",
@@ -39,9 +49,10 @@ export const Sponsors = () => {
       sponsors: [
         {
           name: "Unstop",
-          logo: "./src/images/sponsor/ust.png",
+          logo: ustLogo,
           description:
             "A heartfelt thanks to Unstop, our Hosting Partner, for powering this event with reliable infrastructure and support!",
+          link: "#",
         },
       ],
     },
@@ -52,191 +63,165 @@ export const Sponsors = () => {
       sponsors: [
         {
           name: "Gen.XYZ",
-          logo: "./src/images/sponsor/xyzlogo.png",
+          logo: xyzLogo,
           description:
             "Thank you to gen.xyz, our Silver Sponsor, for your support!",
+          link: "#",
         },
         {
           name: "Navan",
-          logo: "./src/images/sponsor/navan.png",
+          logo: navanLogo,
           description:
             "Thank you to Navan AI, our Silver Sponsor, for your valuable support!",
+          link: "#",
         },
         {
           name: "Nord Vpn",
-          logo: "./src/images/sponsor/nv.png",
+          logo: nvLogo,
           description:
             "A big thank you to NordVPN, our Gold Sponsor, for your exceptional support!",
+          link: "#",
         },
         {
           name: "Saily",
-          logo: "./src/images/sponsor/saily.png",
+          logo: sailyLogo,
           description:
             "A heartfelt thank you to Saily, our Gold Sponsor, for your generous support and partnership!",
+          link: "#",
         },
         {
           name: "Nord Pass",
-          logo: "./src/images/sponsor/nord.png",
+          logo: nordLogo,
           description:
             "A special thank you to NordPass, our Gold Sponsor, for your invaluable support and collaboration!",
+          link: "#",
         },
         {
-          name: "HoverRobotics",
-          logo: "./src/images/sponsor/hvrr.png",
+          name: "HoverRobotix",
+          logo: hvrrLogo,
           description:
-            "Thank you to HoverRobotics, our Platinum Sponsor, for your exceptional support!",
+            "Thank you to HoverRobotix, our Platinum Sponsor, for your exceptional support!",
+          link: "#",
         },
-        { name: "", logo: "", description: "" },
-        { name: "", logo: "", description: "" },
+        { name: "Coming Soon", logo: "", description: "", link: "#" },
+        { name: "Coming Soon", logo: "", description: "", link: "#" },
       ],
     },
   ];
 
   return (
-    <section className="w-full py-20 bg-black text-white" id="sponsors">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {sponsorCategories.map(
-          ({ title, description, sponsors }, categoryIndex) => (
-            <div key={categoryIndex} className="mb-16">
-              {/* Sponsor Category Heading */}
-              <h2 className="text-5xl font-bold text-center mb-8 text-white">
-                {title}
-              </h2>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Explore our sponsor categories: Community Partner, Promotion Partner, Hosting Partner, Event Partner. Find more details about each sponsor and how to get involved."
+        />
+        <meta
+          name="keywords"
+          content="Sponsors, Event Sponsors, Promotion Partners, Hosting Partners, Event Partners, Coin Checkup, Coin Codex, Gen.XYZ, Navan, Nord VPN, Saily, Nord Pass, HoverRobotics"
+        />
+        <meta name="author" content="Your Company Name" />
+        <title>Sponsors | Event Title</title>
+      </Helmet>
 
-              {/* Category Description */}
-              <p
-                className="text-center text-gray-400 mb-12 text-sm md:text-base leading-relaxed px-4"
-                style={{
-                  textAlign: "justify",
-                  margin: "0 auto",
-                  maxWidth: "600px",
-                  lineHeight: "1.6",
-                  marginBottom: "20px",
-                }}
-              >
-                {description}
-              </p>
+      <section className="w-full py-20 bg-black text-white" id="sponsors">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {sponsorCategories.map(
+            ({ title, description, sponsors }, categoryIndex) => (
+              <div key={categoryIndex} className="mb-16 relative z-10">
+                <h2 className="text-5xl font-bold text-center mb-8 text-white relative z-20">
+                  {title}
+                </h2>
 
-              {/* Sponsor Grid */}
-              <div className={`flex flex-wrap justify-center gap-8`}>
-                {sponsors.map((sponsor, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center justify-start border border-gray-700 rounded-xl bg-gradient-to-t from-gray-900 to-black shadow-lg hover:scale-105 transition-transform"
-                    style={{
-                      width: "300px",
-                      height: "450px",
-                      padding: "20px",
-                      paddingBottom: "40px",
-                      gap: "20px",
-                      marginTop: "20px",
-                    }}
-                  >
-                    {/* Sponsor Name and Placeholder */}
-                    <h3 className="text-xl font-semibold text-center mb-4 text-white">
-                      {sponsor.name}
-                    </h3>
-                    <div className="flex items-center justify-center w-full h-[60%] mb-6">
-                      {/* Logo or Coming Soon */}
-                      {sponsor.logo ? (
+                <p
+                  className="text-center text-gray-400 mb-12 text-sm md:text-base leading-relaxed px-4 relative z-20"
+                  style={{ maxWidth: "600px", margin: "0 auto" }}
+                >
+                  {description}
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-8 relative z-10">
+                  {sponsors.map((sponsor, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center justify-start border border-gray-700 rounded-xl bg-gradient-to-t from-gray-900 to-black shadow-lg hover:scale-105 transition-transform relative z-10"
+                      style={{
+                        width: "300px",
+                        height: "450px",
+                        padding: "20px",
+                        gap: "20px",
+                        marginTop: "20px",
+                      }}
+                    >
+                      <h3 className="text-xl font-semibold text-center mb-4 text-white relative z-20">
+                        {sponsor.name}
+                      </h3>
+                      <div className="flex items-center justify-center w-full h-[60%] mb-6">
                         <a
-                          href={sponsor.link || "#"}
+                          href={sponsor.link}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <img
-                            src={sponsor.logo}
-                            alt={`${sponsor.name} logo`}
-                            className="object-contain h-full"
-                          />
+                          {sponsor.logo ? (
+                            <img
+                              src={sponsor.logo}
+                              alt={`${sponsor.name} logo`}
+                              className="object-contain h-full"
+                            />
+                          ) : (
+                            <p className="text-center text-gray-400 text-sm md:text-base relative z-20">
+                              Coming Soon
+                            </p>
+                          )}
                         </a>
-                      ) : (
-                        <p className="text-center text-gray-400 text-sm md:text-base leading-relaxed px-4">
-                          Coming Soon
+                      </div>
+                      {sponsor.description && (
+                        <p className="text-gray-400 text-center text-sm md:text-base leading-relaxed relative z-20">
+                          {sponsor.description}
                         </p>
                       )}
                     </div>
-                    {/* Sponsor Description */}
-                    {sponsor.description && (
-                      <p
-                        className="text-gray-400 text-center text-sm md:text-base leading-relaxed px-4"
-                        style={{
-                          textAlign: "justify",
-                          lineHeight: "1.6",
-                        }}
-                      >
-                        {sponsor.description}
-                      </p>
-                    )}
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          )
-        )}
+            )
+          )}
 
-        {/* Become a Sponsor Section */}
-        <div
-          className="text-center mt-16 p-8 rounded-xl bg-gradient-to-b from-gray-800 to-gray-900 shadow-lg border border-gray-700"
-          style={{
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          {/* Decorative Elements */}
+          {/* Become a Sponsor Section */}
           <div
-            className="absolute top-0 left-0 w-20 h-20 rounded-full bg-blue-500 opacity-50 blur-lg"
-            style={{ transform: "translate(-50%, -50%)" }}
-          ></div>
-          <div
-            className="absolute bottom-0 right-0 w-24 h-24 rounded-full bg-purple-500 opacity-50 blur-lg"
-            style={{ transform: "translate(50%, 50%)" }}
-          ></div>
-
-          <h3 className="text-3xl font-bold text-white mb-6">
-            Want to become our sponsor?
-          </h3>
-
-          <p
-            className="text-gray-400 leading-relaxed px-4 mb-6"
+            className="text-center p-8 rounded-xl bg-gradient-to-b from-gray-800 to-gray-900 shadow-lg border border-gray-700 relative z-20"
             style={{
-              textAlign: "justify",
-              margin: "0 auto",
-              maxWidth: "600px",
-              lineHeight: "1.6",
+              width: "100%", // Keep same width as before
+              maxWidth: "1300px", // Limit width for readability
+              margin: "10px auto", // Increased margin for more spacing
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
-            Join us in making this event extraordinary. As a sponsor, you'll
-            gain unparalleled visibility and the opportunity to connect with a
-            diverse and engaged audience. Your support will help foster
-            innovation and drive success.
-          </p>
+            <h3 className="text-3xl font-bold text-white mb-6 relative z-20">
+              Want to become our sponsor?
+            </h3>
 
-          <a
-            href="mailto:techhub@rathinam.in?subject=Interested%20in%20Sponsorship&body=Become%20Our%20Sponsor%20By%20Sending%20Us%20An%20Email"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button
-              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-lg hover:from-purple-500 hover:to-blue-500 transition-all shadow-md"
-              style={{ marginTop: "10px" }}
+            <p className="text-gray-400 leading-relaxed text-center mb-6 relative z-20">
+              Join us in making this event extraordinary. Support innovation and
+              be part of something great.
+            </p>
+
+            <a
+              href="mailto:techhub@rathinam.in?subject=Interested%20in%20Sponsorship"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Join Now
-            </button>
-          </a>
+              <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-lg hover:from-purple-500 hover:to-blue-500 transition-all shadow-md relative z-20">
+                Join Now
+              </button>
+            </a>
+          </div>
         </div>
-      </div>
-
-      {/* Inline CSS */}
-      <style jsx>{`
-        .container {
-          max-width: 1400px; /* Adjusted for responsiveness */
-        }
-        h2,
-        h3 {
-          font-family: "Poppins", sans-serif;
-        }
-      `}</style>
-    </section>
+      </section>
+    </>
   );
 };

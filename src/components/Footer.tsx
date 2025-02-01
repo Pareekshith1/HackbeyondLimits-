@@ -7,8 +7,8 @@ export const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-black to-black opacity-90" />
 
       {/* Footer Content */}
-      <div className="relative z-10 container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="relative z-10 container mx-auto sm:px-12 lg:px-24 px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Branding */}
           <div>
             <h3 className="text-2xl font-extrabold text-white mb-4 tracking-wide">
@@ -17,27 +17,42 @@ export const Footer = () => {
             <p className="text-gray-400 text-sm mb-4">
               Go Beyond. Hack Beyond.
             </p>
+
+            {/* Social Media Links */}
             <div className="flex space-x-4 mt-6">
               <a
-                href="#"
+                href="https://twitter.com/hackbeyondlimits"
+                aria-label="Follow us on Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-purple-400 transition-transform duration-300 hover:scale-110"
               >
                 <Twitter className="w-8 h-8" />
               </a>
+
               <a
-                href="#"
+                href="https://github.com/hackbeyondlimits"
+                aria-label="Visit our GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-purple-400 transition-transform duration-300 hover:scale-110"
               >
                 <Github className="w-8 h-8" />
               </a>
+
               <a
-                href="#"
+                href="https://linkedin.com/company/hackbeyondlimits"
+                aria-label="Connect with us on LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-purple-400 transition-transform duration-300 hover:scale-110"
               >
                 <Linkedin className="w-8 h-8" />
               </a>
+
               <a
-                href="#"
+                href="mailto:techhub@rathinam.in"
+                aria-label="Send us an email"
                 className="text-gray-400 hover:text-purple-400 transition-transform duration-300 hover:scale-110"
               >
                 <Mail className="w-8 h-8" />
@@ -57,11 +72,18 @@ export const Footer = () => {
               </li>
               <li className="flex items-center space-x-4">
                 <Mail className="w-6 h-6 text-purple-400" />
-                <span>techhub@rathinam.in</span>
+                <a
+                  href="mailto:techhub@rathinam.in"
+                  className="hover:underline"
+                >
+                  techhub@rathinam.in
+                </a>
               </li>
               <li className="flex items-center space-x-4">
                 <Phone className="w-6 h-6 text-purple-400" />
-                <span>+91 63740 60864</span>
+                <a href="tel:+916374060864" className="hover:underline">
+                  +91 63740 60864
+                </a>
               </li>
             </ul>
           </div>
@@ -72,16 +94,30 @@ export const Footer = () => {
               Drop Us a Query
             </h4>
             <form className="space-y-4">
+              <label htmlFor="email" className="sr-only">
+                Your Email
+              </label>
               <input
+                id="email"
                 type="email"
                 placeholder="Your Email"
+                required
                 className="w-full p-3 bg-gray-800 text-gray-300 rounded-md border border-gray-700 focus:ring-2 focus:ring-purple-500 outline-none"
+                aria-label="Enter your email"
               />
+
+              <label htmlFor="query" className="sr-only">
+                Your Query
+              </label>
               <textarea
+                id="query"
                 rows={4}
                 placeholder="Your Query"
+                required
                 className="w-full p-3 bg-gray-800 text-gray-300 rounded-md border border-gray-700 focus:ring-2 focus:ring-purple-500 outline-none"
+                aria-label="Enter your query"
               ></textarea>
+
               <button
                 type="submit"
                 className="w-full bg-purple-500 text-white font-semibold py-2 rounded-md hover:bg-purple-600 transition-colors"
@@ -100,7 +136,7 @@ export const Footer = () => {
 
       {/* Bottom Section */}
       <div className="text-center text-gray-400 py-4">
-        <p>
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg">
           &copy; {new Date().getFullYear()} HACK_BEYOND_LIMIT$. All rights
           reserved.
         </p>

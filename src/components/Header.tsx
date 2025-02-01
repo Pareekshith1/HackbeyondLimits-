@@ -22,12 +22,12 @@ export const Header = () => {
           : ""
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto sm:px-12 lg:px-24 px-6">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             {/* Custom Logo */}
             <img
-              src="./src/images/favicon.png" // Make sure this path is correct
+              src="./src/images/hbllogo.png" // Make sure this path is correct
               alt="HBL logo"
               className="w-[40px] h-[40px] rounded-full object-cover"
             />
@@ -35,7 +35,7 @@ export const Header = () => {
               className="text-xl md:text-2xl font-bold text-white"
               style={{ fontFamily: "Tomorrow, sans-serif" }}
             >
-              Hack Beyond Limit$
+              {"<HackBeyondLimit$>"}
             </span>
           </div>
 
