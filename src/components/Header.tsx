@@ -1,15 +1,28 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -22,12 +35,12 @@ export const Header = () => {
           : ""
       }`}
     >
-      <div className="container mx-auto sm:px-12 lg:px-24 px-6">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-24">
         <div className="flex items-center justify-between h-16">
+          {/* Logo Section */}
           <div className="flex items-center gap-3">
-            {/* Custom Logo */}
             <img
-              src="./src/images/hbllogo.png" // Make sure this path is correct
+              src="./src/images/hbllogo.png"
               alt="HBL logo"
               className="w-[40px] h-[40px] rounded-full object-cover"
             />
@@ -35,22 +48,61 @@ export const Header = () => {
               className="text-xl md:text-2xl font-bold text-white"
               style={{ fontFamily: "Tomorrow, sans-serif" }}
             >
-              {"<HackBeyondLimit$>"}
+              {"<HACKBEYONDLIMIT$>"}
             </span>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {["About", "Timeline", "Prizes", "Sponsors"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-gray-300 hover:text-purple-400 transition-colors text-lg"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
+          {/* Navigation for Larger Screens (Only if screen width > 950px) */}
+          {screenWidth > 950 && (
+            <nav className="flex items-center gap-8">
+              {["About", "Timeline", "Prizes", "Sponsors"].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-gray-300 hover:text-purple-400 transition-colors text-lg"
+                >
+                  {item}
+                </a>
+              ))}
+            </nav>
+          )}
+
+          {/* Hamburger Menu for Small Screens (Only if screen width ≤ 950px) */}
+          {screenWidth <= 950 && (
+            <button
+              className="text-white focus:outline-none"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          )}
         </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {menuOpen && screenWidth <= 950 && (
+            <motion.nav
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute top-16 left-0 w-full bg-black/90 backdrop-blur-lg border-t border-purple-500/20"
+            >
+              <ul className="flex flex-col items-center py-4 space-y-4">
+                {["About", "Timeline", "Prizes", "Sponsors"].map((item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="text-gray-300 hover:text-purple-400 transition-colors text-lg"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
     </motion.header>
   );

@@ -9,7 +9,7 @@ const timelineEvents = [
     description: "Start your journey by registering your team",
   },
   {
-    date: "Feb 12, 2025",
+    date: "Feb 10, 2025",
     title: "Final Call for Registration",
     description: "Last day to secure your spot",
   },

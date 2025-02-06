@@ -24,6 +24,7 @@
     "react-icons": "^5.4.0",
     "react-intersection-observer": "^9.8.0",
     "react-lottie-player": "^2.1.0",
+    "react-router-dom": "^7.1.5",
     "react-tsparticles": "^2.12.2",
     "styled-components": "^6.1.14",
     "tsparticles": "^3.7.1",

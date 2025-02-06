@@ -17,7 +17,13 @@ export const Sponsors = () => {
       description:
         "Here are our Community Partners who foster innovation and collaboration. Their dedication bridges the gap between technology and community.",
       sponsors: [
-        { name: "TechHub", logo: techhub, description: "", link: "#" },
+        {
+          name: "TechHub",
+          logo: techhub,
+          description:
+            "We extend our sincere gratitude to Tech Hub for their esteemed partnership as our community partner.",
+          link: "#",
+        },
         { name: "Coming Soon", logo: "", description: "", link: "#" },
       ],
     },

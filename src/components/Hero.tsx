@@ -21,8 +21,31 @@ export const Hero = () => {
     }, 2500);
   };
 
+  // Inline animation styles
+  const floatingStyle = {
+    animation: "floating 3s ease-in-out infinite",
+  };
+
+  // Keyframes for the animation (Inline)
+  const floatingKeyframes = `
+    @keyframes floating {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px); /* Moves up */
+      }
+      100% {
+        transform: translateY(0); /* Returns to original position */
+      }
+    }
+  `;
+
   return (
     <div className="relative h-screen w-full flex flex-col items-center justify-center px-6 overflow-hidden">
+      {/* Add inline keyframes styles */}
+      <style>{floatingKeyframes}</style>
+
       {/* Particles Background */}
       <Particles
         id="tsparticles"
@@ -74,7 +97,7 @@ export const Hero = () => {
               left: 50,
             }}
           >
-            HACK_BEYOND_LIMIT$
+            {"<HACKBEYONDLIMIT$>"}
           </h1>
           <p
             className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400 mt-4"
@@ -109,7 +132,7 @@ export const Hero = () => {
           </motion.button>
         </motion.div>
 
-        {/* Interactive Spline Mascot */}
+        {/* Interactive Spline Mascot with Floating Animation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -121,7 +144,10 @@ export const Hero = () => {
             left: 50,
           }}
         >
-          <div className="w-full h-full">
+          <div
+            className="w-full h-full"
+            style={floatingStyle} // Applying the floating animation style
+          >
             <Spline scene="./src/images/robot_follow_cursor_for_landing_page_copy_2.spline" />
           </div>
         </motion.div>

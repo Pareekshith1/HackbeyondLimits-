@@ -413,6 +413,7 @@ const OrganizerPage: React.FC = () => {
               ))}
           </div>
         </div>
+
         <div style={{ height: "150px" }}></div>
       </div>
     </div>
