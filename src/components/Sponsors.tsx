@@ -9,6 +9,7 @@ import sailyLogo from "../images/saily.png";
 import nordLogo from "../images/nord.png";
 import hvrrLogo from "../images/hvrr.png";
 import techhub from "../images/techhub.png";
+import incogni from "../images/incogni.png";
 
 export const Sponsors = () => {
   const sponsorCategories = [
@@ -109,7 +110,13 @@ export const Sponsors = () => {
             "Thank you to HoverRobotix, our Platinum Sponsor, for your exceptional support!",
           link: "#",
         },
-        { name: "Coming Soon", logo: "", description: "", link: "#" },
+        {
+          name: "Incogni",
+          logo: incogni,
+          description:
+            "A heartfelt thank you to Incogni, our Gold Sponsor, for your generous support and partnership!",
+          link: "#",
+        },
         { name: "Coming Soon", logo: "", description: "", link: "#" },
       ],
     },

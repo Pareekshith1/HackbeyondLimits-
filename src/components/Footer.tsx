@@ -21,7 +21,7 @@ export const Footer = () => {
             {/* Social Media Links */}
             <div className="flex space-x-4 mt-6">
               <a
-                href="https://twitter.com/hackbeyondlimits"
+                href="https://x.com/HackBeyondLimit?t=oNeNo1VyEqLgt9Cv-_YwuQ&s=09"
                 aria-label="Follow us on Twitter"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -31,7 +31,7 @@ export const Footer = () => {
               </a>
 
               <a
-                href="https://github.com/hackbeyondlimits"
+                href="https://github.com/HackBeyondLimits"
                 aria-label="Visit our GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export const Footer = () => {
               </a>
 
               <a
-                href="https://linkedin.com/company/hackbeyondlimits"
+                href="https://www.linkedin.com/showcase/hack-beyond-limits/"
                 aria-label="Connect with us on LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"

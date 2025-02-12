@@ -12,7 +12,6 @@ import { Location } from "./components/Location";
 import { Footer } from "./components/Footer";
 import { Sponsors } from "./components/Sponsors";
 import ReasonsSection from "./components/reasons";
-import GuestsList from "./components/guests";
 
 function App() {
   const [showSplash, setShowSplash] = useState(true); // ✅ Define state to control splash screen
@@ -29,7 +28,6 @@ function App() {
           <Timeline />
           <Prizes />
           <ReasonsSection />
-          <GuestsList />
           <Sponsors />
           <Location />
           <OrganizerPage />

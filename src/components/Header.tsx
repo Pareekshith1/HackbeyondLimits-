@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import hbl from "../images/hbllogo.png";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -40,15 +41,15 @@ export const Header = () => {
           {/* Logo Section */}
           <div className="flex items-center gap-3">
             <img
-              src="./src/images/hbllogo.png"
+              src={hbl}
               alt="HBL logo"
               className="w-[40px] h-[40px] rounded-full object-cover"
             />
             <span
-              className="text-xl md:text-2xl font-bold text-white"
+              className="text-xl md:text-2xl font-bold text-white hidden sm:block"
               style={{ fontFamily: "Tomorrow, sans-serif" }}
             >
-              {"<HACKBEYONDLIMIT$>"}
+              {"< HACK BEYOND LIMIT$ >"}
             </span>
           </div>
 
